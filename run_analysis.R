@@ -72,10 +72,6 @@ write.csv(labeledData, "./UCI HAR Dataset/labeled_Data.txt")
 tidyData <- labeledData
 tidyData$category <- interaction(labeledData$subject, labeledData$Activity.Label)
 
-fac <- factor(tidyData$category)
-as.factor(tidyData$category)
-tapply(tidyData, tidyData$category, mean)
-
 result <- data.frame(t(rep(NA, length(colnames(tidyData)))))
 names(result) <- colnames(tidyData)
 result <- result[-1, ]
